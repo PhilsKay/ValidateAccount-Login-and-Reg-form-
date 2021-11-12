@@ -1,0 +1,67 @@
+﻿@model ValidateAccount.Models.AccountDatails
+<head>
+    <title style="color:indigo">@ViewData["Title"] Register Account</title>
+    <style>
+        .dd {
+            border-radius: 20px
+        }
+    </style>
+</head>
+<form method="post" asp-action="Index">
+    <div class="border p-3">
+        <div class="form_group row">
+            <h1 class="text-info pl-3">Register Account</h1>
+        </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.DisplayNameFor(Model => Model.Email)
+                    </div>
+                    <div class="col-8">
+                        <input type="email" asp-for="Email" class="form-control dd" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.DisplayNameFor(Model => Model.UserPass)
+                    </div>
+                    <div class="col-8">
+                        <input type="password" asp-for="UserPass" class="form-control dd" />
+                        <span asp-validation-for="UserPass" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        @Html.DisplayNameFor(Model => Model.ConfirmUserPass)
+                    </div>
+                    <div class="col-8">
+                        <input type="password" asp-for="ConfirmUserPass" class="form-control dd" />
+                        <span asp-validation-for="ConfirmUserPass" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-8 offset-4 row">
+                        <div class="col">
+                            <input type="submit" onclick="return confirm('You are about to register.')" class="btn btn-primary w-100 dd" value="Summit" />
+                        </div>
+                        <br />
+                        <br />
+                        <div class="col">
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-success w-100 dd">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+}
+}

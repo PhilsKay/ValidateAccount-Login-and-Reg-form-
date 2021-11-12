@@ -1,0 +1,82 @@
+﻿<!doctype html>
+@model ValidateAccount.Models.AccountDatails
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/temStyles/fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="~/css/temStyles/css/owl.carousel.min.css" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/temStyles/css/bootstrap.min.css" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="~/css/temStyles/css/style.css" />
+    <style>
+       
+    </style>
+
+    <title>Login Form</title>
+</head>
+<body>
+
+    <div class="d-md-flex half">
+        <div class="bg" style="background-image:url('/images/pexels-lukas-574071.jpg')">
+
+        </div>
+        <div class="contents">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-12">
+                        <div class="form-block mx-auto">
+                            <div class="text-center mb-5">
+                                <h3>Login to <strong><span style="color:blue">Dav</span><span style="color:orangered">libs</span></strong></h3>
+                                <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
+                            </div>
+                            <form asp-action="Index" method="post">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group first">
+                                    <label asp-for="Email">Username</label>
+                                    <input type="email" class="form-control" placeholder="your-email@gmail.com" id="username"
+                                           asp-for="Email" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group last mb-3">
+                                    <label asp-for="UserPass">Password</label>
+                                    <input type="password" class="form-control" placeholder="Your Password" id="password"
+                                           asp-for="UserPass" />
+                                    <span asp-validation-for="UserPass" class="text-danger"></span>
+                                </div>
+
+                                <div class="d-sm-flex mb-5 align-items-center">
+                                    <label class="control control--checkbox mb-3 mb-sm-0">
+                                    </label>
+                                    <span class="ml-auto"><a asp-controller="Registration" asp-action="Index" class="alert-secondary">not registered?</a></span>
+                                </div>
+                                <input type="submit" value="Log In" class="btn btn-block btn-primary" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    @section scripts{
+        @{
+    }
+            <partial name="_ValidationScriptsPartial" />
+
+        }
+
+    <script src="~/js/jquery-3.3.1.min.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/main.js"></script>
+</body>
+</html>
